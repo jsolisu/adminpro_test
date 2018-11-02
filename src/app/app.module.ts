@@ -9,6 +9,9 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './login/register.component';
 
+// Servicios
+import { SettingsService } from './services/settings.service';
+
 // Modulos
 import { PagesModule } from './pages/pages.module';
 import { IncrementadorComponent } from './components/incrementador/incrementador.component';
@@ -26,7 +29,7 @@ import { FormsModule } from '@angular/forms';
     PagesModule,
     FormsModule
   ],
-  providers: [],
+  providers: [SettingsService],
   bootstrap: [AppComponent] // componente principal
 })
 export class AppModule { }
