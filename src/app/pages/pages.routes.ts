@@ -14,7 +14,7 @@ const pagesRoutes: Routes = [
             { path: 'dashboard', component: DashboardComponent },
             { path: 'progress', component: ProgressComponent },
             { path: 'graficas1', component: Graficas1Component },
-            { path: 'promesas', component: PromesasComponent}
+            { path: 'promesas', component: PromesasComponent},
             { path: 'account-settings', component: AccountSettingsComponent},
             { path: '', redirectTo: '/dashboard', pathMatch: 'full' }
         ]
