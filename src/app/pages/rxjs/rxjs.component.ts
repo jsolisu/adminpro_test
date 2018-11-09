@@ -11,7 +11,21 @@ export class RxjsComponent implements OnInit {
 
   constructor() {
 
-    const obs = new Observable(observer => {
+    this.regresaObservable()
+      .pipe(retry(2))
+      .subscribe(numero => {
+        console.log(numero);
+      },
+        error => console.log(error),
+        () => console.log('Completo'));
+
+  }
+
+  ngOnInit() {
+  }
+
+  regresaObservable (): Observable<number> {
+    return new Observable(observer => {
       let contador = 0;
       const intervalo = setInterval(() => {
         contador += 1;
@@ -23,18 +37,6 @@ export class RxjsComponent implements OnInit {
         }
       }, 1000);
     });
-
-    obs
-      .pipe(retry(2))
-      .subscribe(numero => {
-        console.log(numero);
-      },
-        error => console.log(error),
-        () => console.log('Completo'));
-
-  }
-
-  ngOnInit() {
   }
 
 }
